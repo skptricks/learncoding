@@ -1,0 +1,131 @@
+<html>
+
+<head>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <link href="circle.css" rel="stylesheet" type="text/css">
+    <script src="progress-circle.js"></script>
+    <style>
+        body {
+            background-color: #f1f1f1;
+        }
+        .main-container {
+            width: 500px;
+            height: 140px;
+            margin: 0px auto;
+            background: #f2f8fd;
+            padding: 10px;
+            border: 3px solid #bedff6;
+            border-radius: 10px;
+        }
+        .main-container:after {
+            content: ".";
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+        }
+        .img-circle {
+            border-radius: 50%;
+            width: 70px;
+            height: 70px;
+        }
+        .EdgeButton {
+            border-radius: 100px;
+            box-shadow: none;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            line-height: 20px;
+            padding: 6px 16px;
+            position: relative;
+            text-align: center;
+            white-space: nowrap;
+            background-color: #4AB3F4;
+            color: white;
+        }
+        #count {
+            position: absolute;
+            z-index: 10;
+            padding: 2px;
+            margin: 6px;
+            text-align: center;
+            font-size: 15px;
+            font-weight: bold;
+        }
+        #circle {
+            float: left;
+        }
+        #error-message {
+            width: 300px;
+            float: left;
+            margin-top: 8px;
+            color: red;
+            display: none;
+        }
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            // Default count value	
+            var count = 0;
+            // textarea max accept 250 characters...
+            var maxLength = 250;
+            $("textarea").keyup(function() {
+
+                var getTextCount = $(this).val();
+                var main = getTextCount.length * 100;
+                var valueInPercentage = Math.ceil(main / maxLength);
+                var charCount = maxLength - getTextCount.length;
+
+                // set text count value...
+                if (getTextCount.length <= maxLength) {
+                    $('#count').html(charCount);
+                    $('#circle').progressCircle({
+                        nPercent: valueInPercentage,
+                        showPercentText: false,
+                        circleSize: 37,
+                        thickness: 6
+                    });
+                } else {
+                    $('#count').html(maxLength - getTextCount.length);
+                    $('#error-message').show();
+
+                }
+                return false;
+            });
+
+
+            // Display loader on first load...
+            $('#circle').progressCircle({
+                nPercent: 0,
+                showPercentText: false,
+                circleSize: 37,
+                thickness: 6
+            });
+
+        });
+    </script>
+</head>
+
+<body>
+	<div style="position:fixed;right:10px;width:200px;background-color:#7ec0ee;padding:10px;text-align:center;color:white;font-weight:bold;"> <a href="http://www.skptricks.com/2018/02/twitter-like-message-box-with-live-character-count.html"> Download Now </a> </div>
+<center> <h1> <a href="http://www.skptricks.com/2018/02/twitter-like-message-box-with-live-character-count.html"> Twitter Tweet Message Box with Live Character Count </h1> </a>  </center>
+
+    <div class="main-container">
+	
+        <span> <img class="img-circle" src="H33H0z.jpg" /> </span>
+        <textarea rows="5" cols="50"></textarea>
+
+        <div style="float:right;margin-right:52px;">
+
+            <div id="error-message">*It accept max 250 characters.</div>
+
+            <div id="circle">
+                <div id="count">250</div>
+            </div>
+            <button class="EdgeButton"> Tweet</button>
+
+        </div>
+    </div>
+</body>
+
+</html>
