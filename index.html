@@ -1,0 +1,140 @@
+<html>
+<head>
+<style>
+body{
+background-color: #f1f1f1;
+}
+.main-container{
+width:500px;
+height:140px;
+margin:0px auto;
+background:#E8F5FD;
+padding:10px;
+}
+
+.main-container:after
+{
+content: ".";
+ display: block;
+ height: 0;
+ clear: both;
+ visibility: hidden;
+
+}
+
+.img-circle {
+    border-radius: 50%;
+ width:70px;
+ height:70px;
+}
+
+.EdgeButton{
+    border-radius: 100px;	
+    box-shadow: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 20px;
+    padding: 6px 16px;
+    position: relative;
+    text-align: center;
+    white-space: nowrap;
+	background-color: #4AB3F4;
+	color:white;
+}
+
+
+#bar
+{
+background-color:#5fbbde;
+width:0px;
+height:16px;
+}
+#barbox
+{
+float:right; 
+width:100px; 
+height:16px; 
+background-color:#FFFFFF; 
+border:solid 2px #000; 
+margin-right:3px;
+-webkit-border-radius:5px;-moz-border-radius:5px;
+}
+#count
+{
+float:right; margin-right:8px; 
+font-family:'Georgia', Times New Roman, Times, serif; 
+font-size:16px; 
+font-weight:bold; 
+color:#666666
+}
+
+</style>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<link href="https://www.jqueryscript.net/demo/Simple-Circle-Progress-Indicator-Plugin-with-jQuery-CSS3-Progress-Circle/css/circle.css" rel="stylesheet" type="text/css">
+<script src="https://www.jqueryscript.net/demo/Simple-Circle-Progress-Indicator-Plugin-with-jQuery-CSS3-Progress-Circle/progress-circle.js"></script>
+<script type="text/javascript">
+$(document).ready(function()
+{
+$("textarea").keyup(function()
+{
+var box=$(this).val();
+var main = box.length *100;
+var value= (main / 145);
+var count= 145 - box.length;
+
+if(box.length <= 145)
+{
+$('#count').html(count);
+$('#bar').animate(
+{
+"width": value+'%',
+}, 1);
+}
+else
+{
+alert(' Full ');
+}
+return false;
+});
+
+
+$('#circle').progressCircle({
+nPercent        : 90,
+showPercentText : true,
+circleSize      : 100,
+thickness       : 3
+});
+
+
+
+
+
+});
+</script>
+</head>
+	
+
+
+
+<body>
+
+<div class="main-container">
+
+<span > <img class="img-circle" src="http://imagizer.imageshack.com/img924/9084/H33H0z.jpg" /> </span>
+<textarea  rows="5" cols="50"></textarea>
+<button class="EdgeButton" style="float:right;right:45px;top:10px;"> Tweet</button>
+
+<div id="count">145</div>
+<div id="barbox"><div id="bar"></div></div>
+</div>
+
+<div id="circle">
+</div>
+
+</div>	
+	
+</body>
+	
+</html>	
