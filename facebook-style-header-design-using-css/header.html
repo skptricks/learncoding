@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px
+        }
+        #main-container {
+            width: 100%;
+            margin: 0px auto;
+        }
+        #header {
+            width: 100%;
+            background-color: #4267b2;
+            padding: 10px;
+            color: white;
+        }
+        #header:after {
+            content: ".";
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+        }
+        #header section > #fb-icon {
+            margin-left: 140px;
+        }
+        #header section > img {
+            float: left;
+            margin-left: 10px;
+        }
+        #header section > input {
+            float: left;
+            margin-top: 0px;
+            margin-left: 10px;
+            margin-right: 400px;
+        }
+        #header nav {
+            width: 50%;
+            float: left;
+        }
+        #header nav ul {
+            list-style: none;
+        }
+        #header nav ul li {
+            float: left;
+            min-width: 10%;
+            padding: 4px;
+            margin-left: 10px;
+            background-color: #ffffcc;
+            text-align: center;
+            color: black;
+        }
+        #header nav ul li a,
+        a {
+            text-decoration: none;
+        }
+        input {
+            display: block;
+            margin-top: 10px;
+            min-width: 20%;
+            height: 6px;
+            padding: 10px;
+            border: solid 1px #BDC7D8;
+        }
+		 @media screen and (max-width: 1000px) {
+            #header section > input  {
+            margin-right: 40px;
+        }
+        }
+    </style>
+</head>
+
+<body>
+    <!--  <div style="position:fixed;right:10px;width:200px;background-color:#7ec0ee;padding:10px;text-align:center;color:white;font-weight:bold;"> <a href="http://www.skptricks.com/2018/02/horizontal-navigation-or-menu-bar-using-css.html"> Download Now </a> </div>	 -->
+
+    <div id="main-container">
+        <header id="header">
+            <section> <img id="fb-icon" src="fb.png" width="30" /> </section>
+
+            <section> 
+            <input type="text" id="search" placeholder="Search Friend" autocomplete="off" /> 
+			</section>
+
+            <section> <img src="user.png" width="30" /> </section>
+            <section> <img src="chat.png" width="30" /> </section>
+            <section> <img src="earth.png" width="30" /> </section>
+            <section> <img src="setting.png" style="margin-left:40px;" width="30" /> </section>
+
+        </header>
+    </div>
+</body>
+
+</html>
