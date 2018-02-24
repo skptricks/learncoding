@@ -1,0 +1,39 @@
+#chat-sidebar {
+     width: 250px;
+     position: fixed;
+     height: 100%;
+     right: 0px;
+     top: 0px;
+     padding-top: 10px;
+     padding-bottom: 10px;
+     border: 1px solid #b2b2b2;
+}
+ #sidebar-user-box {
+     padding: 4px;     
+     margin-bottom: 4px;
+     font-size: 15px;
+     font-family: Calibri;
+	 font-weight:bold;
+	 cursor:pointer;
+}
+#sidebar-user-box:hover {
+     background-color:#e5e5e5 ;
+}
+ #sidebar-user-box:after {
+     content: ".";
+     display: block;
+     height: 0;
+     clear: both;
+     visibility: hidden;
+}
+ img{
+     width:35px;
+     height:35px;
+     border-radius:50%;
+     float:left;
+}
+ #slider-username{
+     float:left;
+     line-height:30px;
+     margin-left:5px;
+}
