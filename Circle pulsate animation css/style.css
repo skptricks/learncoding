@@ -1,0 +1,29 @@
+.pulse-animation {
+  margin:50px;
+  display: block;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #ff8717;
+  cursor: pointer;  
+  animation: pulse 2s infinite;
+  float:left;
+}
+.pulse-animation:hover {
+  animation: none;
+}
+
+@keyframes pulse {
+  0% {
+    -moz-box-shadow: 0 0 0 0 rgba(204,169,44, 0.4);
+    box-shadow: 0 0 0 0 rgba(204,169,44, 0.4);
+  }
+  70% {
+      -moz-box-shadow: 0 0 0 30px rgba(204,169,44, 0);
+      box-shadow: 0 0 0 30px rgba(204,169,44, 0);
+  }
+  100% {
+      -moz-box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+      box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+  }
+}
