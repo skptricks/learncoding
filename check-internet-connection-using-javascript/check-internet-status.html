@@ -1,0 +1,20 @@
+<html>
+<head>
+<script>
+function updateOnlineStatus() {
+    document.getElementById("status").innerHTML = "User is online";
+}
+
+function updateOfflineStatus() {
+    document.getElementById("status").innerHTML = "User is offline";
+}
+
+window.addEventListener('online', updateOnlineStatus);
+window.addEventListener('offline', updateOfflineStatus);	
+	
+</script>	
+</head>
+<body>
+	<div id="status">User is online</div>
+</body>
+</html>
