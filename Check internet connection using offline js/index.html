@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6 ie9-and-less ie8-and-less ie7-and-less" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 ie9-and-less ie8-and-less ie7-and-less" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 ie9-and-less ie8-and-less" lang="en"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js ie9 ie9-and-less" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <title>Offline.js – Handle your users losing their internet connection like a pro</title>
+		
+        <link rel="stylesheet" type="text/css" href="offline-theme-default.css">
+		<link rel="stylesheet" href="offline-language-english.min.css" />
+		<script src="offline.min.js"></script>
+</head>
+<body>
+	
+	
+	<div style="margin:100px auto;width:700px;font-weight:bold;line-height:30px;background:#e5e5e5;padding:10px;"> 
+	Please turn off your wifi connection or unplug your ethernet cable and wait for 2 seconds 
+	</div>
+	
+	
+<script type="text/javascript">
+Offline.options = {
+  // to check the connection status immediatly on page load.
+  checkOnLoad: false,
+
+  // to monitor AJAX requests to check connection.
+  interceptRequests: true,
+
+  // to automatically retest periodically when the connection is down (set to false to disable).
+  reconnect: {
+    // delay time in seconds to wait before rechecking.
+    initialDelay: 3,
+
+    // wait time in seconds between retries.
+    delay: 10
+  },
+
+  // to store and attempt to remake requests which failed while the connection was down.
+  requests: true
+};
+</script>
+
+</html>
+
